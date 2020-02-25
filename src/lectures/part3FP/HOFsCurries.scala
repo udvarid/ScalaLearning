@@ -38,4 +38,20 @@ object HOFsCurries extends App {
   println(versionOne(24))
   println(versionTwo(24))
 
+  println("----------------------")
+  def toCurry(f: (Int, Int) => Int): (Int => Int => Int) =
+    x => y => f(x, y)
+
+  def fromCurry(f: (Int => Int => Int)):(Int, Int) => Int =
+    (x, y) => f(x)(y)
+
+  def compose[A, B, T](f: A => B, g: T => A): T => B =
+    x => f(g(x))
+
+  def andThen[A, B, C](f: A => B, g: B => C): A => C =
+    x => g(f(x))
+
+  def superAdder2: (Int => Int => Int) = toCurry(_ + _)
+  def add4 = superAdder2(17)
+
 }
