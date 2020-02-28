@@ -20,6 +20,7 @@ object PatternMatching extends App {
 
   //decompose valuse
   case class Person(name: String, age: Int)
+
   val bob = Person("Bob", 24)
 
   val greeting = bob match {
@@ -32,20 +33,25 @@ object PatternMatching extends App {
 
   //excercises
   trait Expr
+
   case class Number(n: Int) extends Expr
+
   case class Sum(e1: Expr, e2: Expr) extends Expr
+
   case class Prod(e1: Expr, e2: Expr) extends Expr
 
-  def show (e: Expr): String = e match {
-    case Number(n) => s"$n"
-    case Sum(e1, e2) => show(e1) + " + " + show(e2)
-    case Prod(e1, e2) => {
-      def maybeShowPar(e: Expr) = e match {
-        case Prod(_, _) => show(e)
-        case Number(_) => show(e)
-        case _ => "("+show(e)+ ")"
-      }
-      maybeShowPar(e1) + " * " + maybeShowPar(e2)
+  def show(e: Expr): String = {
+    def maybeShowPar(e: Expr) = e match {
+      case Prod(_, _) => show(e)
+      case Number(_) => show(e)
+      case _ => "(" + show(e) + ")"
+    }
+
+    e match {
+      case Number(n) => s"$n"
+      case Sum(e1, e2) => show(e1) + " + " + show(e2)
+      case Prod(e1, e2) => maybeShowPar(e1) + " * " + maybeShowPar(e2)
+
     }
   }
 
