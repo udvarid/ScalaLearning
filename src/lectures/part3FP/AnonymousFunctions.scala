@@ -42,4 +42,5 @@ object AnonymousFunctions extends App {
 
   println(superAdd(8)(9))
 
+
 }

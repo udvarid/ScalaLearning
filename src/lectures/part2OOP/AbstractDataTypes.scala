@@ -34,6 +34,8 @@ object AbstractDataTypes extends App {
   val dog = new Dog
   val croc = new Crocodile
 
+  croc eat
+
   croc eat dog
 
   println(croc.preferredMeal)

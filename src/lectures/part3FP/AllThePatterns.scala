@@ -34,7 +34,7 @@ object AllThePatterns extends App {
 
   val nestedTuple = (1, (2, 3))
   val matchaNestedTuple = nestedTuple match {
-    case (_, (2, v)) =>
+    case (_, (2, _)) =>
   }
 
   //4, case classes - constructor pattern

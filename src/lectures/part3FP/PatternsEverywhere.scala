@@ -40,5 +40,4 @@ object PatternsEverywhere extends App {
   println(mappedList)
   println(mappedList2)
 
-
 }

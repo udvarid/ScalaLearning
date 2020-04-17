@@ -36,4 +36,5 @@ object HandlingFailure extends App {
   println(aSucces.flatMap(x => Success(x * 10)))
   println(aSucces.filter(_ > 10))
 
+
 }

@@ -86,4 +86,5 @@ object Optional extends App {
     connection <- Connection(host, port)
   } yield connection.connect
   connectionStatus2.foreach(println)
+
 }

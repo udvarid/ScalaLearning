@@ -21,6 +21,6 @@ object CLBNvsCLBV extends App{
 
   calledByNameFunction(5,5)
   calledByNameFunction(5, infiniteFunction()) // this is ok, as the second parameter called by name
-  calledByNameFunction(infiniteFunction(), 5) // it will crash as the first parameter called by value
+  //calledByNameFunction(infiniteFunction(), 5) // it will crash as the first parameter called by value
 
 }

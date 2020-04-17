@@ -48,4 +48,5 @@ object MapFlatmapFilterFor extends App {
   println("---------")
   println(list)
   println(newList)
+
 }

@@ -37,6 +37,7 @@ object WhatIsFunction extends App {
   println(adder3(4))
 
   println(superAdder(56)(44)) // curried function
+
 }
 
 trait MyFunction[A, B] {
